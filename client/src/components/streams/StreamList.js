@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchStreams } from "../../actions";
 import { Link } from "react-router-dom";
+import "./StreamList.css";
 
 class StreamList extends React.Component {
 	componentDidMount() {
@@ -54,7 +55,7 @@ class StreamList extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className='streams'>
 				<h2>Streams</h2>
 				<div className='ui celled list'>{this.renderList()}</div>
 				{this.renderCreate()}
