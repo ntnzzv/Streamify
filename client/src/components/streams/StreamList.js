@@ -45,8 +45,8 @@ class StreamList extends React.Component {
 	renderCreate() {
 		if (this.props.isSignedIn) {
 			return (
-				<div style={{ textAlign: "right" }}>
-					<Link to='/streams/new' className='ui primary button'>
+				<div style={{ textAlign: "right" }} className='create-stream'>
+					<Link to='/streams/new' className='create-btn'>
 						Create Stream
 					</Link>
 				</div>
@@ -55,11 +55,13 @@ class StreamList extends React.Component {
 	}
 	render() {
 		return (
-			<div className='streams'>
-				<h2>Streams</h2>
-				<div className='ui celled list'>{this.renderList()}</div>
+			<>
+				<div className='streams'>
+					<h3>Streams {`(${Object.keys(this.props.streams).length})`}</h3>
+					<div className='ui celled list'>{this.renderList()}</div>
+				</div>
 				{this.renderCreate()}
-			</div>
+			</>
 		);
 	}
 }

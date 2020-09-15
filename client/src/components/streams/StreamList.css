@@ -1,0 +1,24 @@
+.streams > h3{
+    color: #c7d1dc;
+}
+.create-stream{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.streams {
+    display: flexbox;
+    flex-direction:row;
+    margin: 100px;
+}
+
+.item{
+}
+
+.create-btn{
+    padding: 8px;
+    color:white;
+    background-image: linear-gradient(130deg,rgba(245, 110, 6, 0.885),rgba(255, 205, 4, 0.885));
+    border-radius: 20px;
+}

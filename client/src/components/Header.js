@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import GoogleAuth from "./GoogleAuth";
 import "./Header.css";
 
-const Header = () => {
+const Header = (props) => {
+	const renderWelcome = () => {
+		if (props.isSignedIn) {
+			return `Hi ${props.username.split(" ")[0]}`;
+		}
+		return "Welcome to Streamify";
+	};
 	return (
 		<div className='ui secondary pointing menu'>
 			<div className='headline'>
-				Welcome to Streamify
+				{renderWelcome()}
 				<div className='sub-headline'>
 					Below you can manage your streams and watch others!
 				</div>
@@ -15,7 +22,7 @@ const Header = () => {
 
 			<div className='navigation'>
 				<Link to='/' className='streams-btn'>
-					Go to all Streams
+					Current Streams
 				</Link>
 				<GoogleAuth />
 			</div>
@@ -23,4 +30,10 @@ const Header = () => {
 	);
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+	return {
+		username: state.auth.username,
+		isSignedIn: state.auth.isSignedIn,
+	};
+};
+export default connect(mapStateToProps, {})(Header);

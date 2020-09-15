@@ -8,7 +8,7 @@ class GoogleAuth extends React.Component {
 			window.gapi.client
 				.init({
 					clientId: process.env.REACT_APP_CLIENT_ID,
-					scope: "email",
+					scope: "email profile",
 				})
 				.then(() => {
 					this.auth = window.gapi.auth2.getAuthInstance();
@@ -20,7 +20,10 @@ class GoogleAuth extends React.Component {
 
 	onAuthChange = (isSignedIn) => {
 		if (isSignedIn) {
-			this.props.signIn(this.auth.currentUser.get().getId());
+			this.props.signIn(
+				this.auth.currentUser.get().getId(),
+				this.auth.currentUser.get().getBasicProfile().getName()
+			);
 		} else {
 			this.props.signOut();
 		}
