@@ -1,5 +1,6 @@
 .streams > h3{
     color: #c7d1dc;
+    text-align: center;
 }
 .create-stream{
     display: flex;
@@ -8,12 +9,19 @@
 }
 
 .streams {
-    display: flexbox;
-    flex-direction:row;
-    margin: 100px;
+    margin-bottom: 20px;
 }
 
 .item{
+    text-align: center;
+    margin: 20px;
+}
+
+.stream-boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .create-btn{
@@ -21,4 +29,33 @@
     color:white;
     background-image: linear-gradient(130deg,rgba(245, 110, 6, 0.885),rgba(255, 205, 4, 0.885));
     border-radius: 20px;
+}
+
+.stream-box-title{
+    font-size: x-large;
+    font-weight: 900;
+    color:white;
+    padding: 30px;
+    background-image: linear-gradient(130deg,rgba(245, 42, 6, 0.885),rgba(255, 184, 4, 0.885));
+    border-radius: 15px;
+}
+
+.description{
+    color: #c7d1dc;
+    padding: 10px;
+}
+
+.right.floated.content{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 20px;
+}
+
+.admin-btn{
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    background-image: linear-gradient(130deg,rgba(6, 149, 245, 0.885),rgba(79, 4, 255, 0.885));
 }
