@@ -1,11 +1,9 @@
 #root {
     height: 100%;
     padding-top: 30px;
-    background-color: #1f2743;
-    border-radius: 30px;
+    background-image: url("assets/3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
-}
-
-body {
-    background-color: rgba(0, 255, 128, 0.433);
 }

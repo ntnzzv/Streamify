@@ -29,7 +29,9 @@ class StreamList extends React.Component {
 				<div className='item' key={stream.id}>
 					<div className='content'>
 						<Link to={`streams/${stream.id}`} className='header'>
-							<div className='stream-box-title'>{stream.title}</div>
+							<div className='wrapper-title'>
+								<div className='stream-box-title'>{stream.title}</div>
+							</div>
 						</Link>
 						<div className='description'>{stream.description}</div>
 					</div>
